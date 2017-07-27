@@ -1,0 +1,129 @@
+.site-content
+      .site-header
+        .container
+          a.branding href="index.html"
+            = image_tag("/assets/logo.png", class: 'logo')
+          .logo-type
+            h1.site-title Weather Inc.
+            small.site-description We ink the weather!
+      .hero data-bg-image="/assets/banner.jpg"
+        .container
+          = form_tag(weathers_get_weather_data_path, remote: true, method: 'post', class: "find-location")
+            = text_field_tag "[city]", nil, required: "true", placeholder: "Find your location..."
+            = button_tag("Get Weather", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"})
+      .forecast-table
+        .container
+          .forecast-container
+            .today.forecast
+              .forecast-header
+                .day Monday
+                .date 6 Oct
+              /! .forecast-header
+              .forecast-content
+                .location 
+                .degree
+                  .num
+                    | 23
+                    sup> o
+                    | C
+                  .forecast-icon
+                    = image_tag("/assets/icons/icon-1.svg", width: "90")
+                span
+                  = image_tag("/assets/icon-umberella.png")
+                  | 20%
+                span
+                  = image_tag("/assets/icon-wind.png")
+                  | 18km/h
+                span
+                  = image_tag("/assets/icon-compass.png")
+                  | East
+            .forecast
+              .forecast-header
+                .day Tuesday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-3.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+            .forecast
+              .forecast-header
+                .day Wednesday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-5.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+            .forecast
+              .forecast-header
+                .day Thursday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-7.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+            .forecast
+              .forecast-header
+                .day Friday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-12.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+            .forecast
+              .forecast-header
+                .day Saturday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-13.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+            .forecast
+              .forecast-header
+                .day Sunday
+              /! .forecast-header
+              .forecast-content
+                .forecast-icon
+                  = image_tag("/assets/icons/icon-14.svg", width: "48")
+                .degree
+                  | 23
+                  sup> o
+                  | C
+                small
+                  | 18
+                  sup o
+
+      footer.site-footer
+        .container
+          p.colophon Copyright 2017 Marco Steffensky. Designed by Themezy. All rights reserved
+      /! .site-footer
+= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
