@@ -27,8 +27,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'httparty'
 gem 'slim', '~> 2.0'
 gem 'jquery-rails', '~> 4.1'
-gem 'flexslider'
-gem 'momentjs-rails'
+gem 'geocomplete_rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -47,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'pry'
+  gem 'rb-readline'
 end
 
 group :development do

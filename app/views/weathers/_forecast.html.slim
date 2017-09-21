@@ -1,0 +1,41 @@
+.container
+  .forecast-container
+    .today.forecast
+      .forecast-header
+        .day
+          = day_formatted(@query["list"].first["dt"])
+        .date
+          = date_formatted(@query["list"].first["dt"])
+      /! .forecast-header
+      .forecast-content
+        .location #{@query["city"]["name"]}, #{@query["city"]["country"]}
+        .degree
+          .num
+            = temp(@query["list"].first["temp"]["day"])
+            sup> o
+            | C
+          .forecast-icon
+            = image_tag("/assets/icons/#{weather_icon(@query["list"].first["weather"][0]["id"].to_i)}.svg", width: "90")
+        span
+          = image_tag("/assets/icon-wind.png")
+          = wind_speed
+        span
+          = image_tag("/assets/icon-compass.png")
+          = wind_direction
+
+    - @query["list"].drop(1).each do |item|
+      .forecast
+        .forecast-header
+          .day
+            = day_formatted(item["dt"])
+        /! .forecast-header
+        .forecast-content
+          .forecast-icon
+            = image_tag("/assets/icons/#{weather_icon(item["weather"][0]["id"].to_i)}", width: "48")
+          .degree
+            = temp(item["temp"]["day"])
+            sup> o
+            | C
+          small
+            = temp(item["temp"]["min"])
+            sup o

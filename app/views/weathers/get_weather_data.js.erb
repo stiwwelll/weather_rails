@@ -1,15 +1,4 @@
-var search_result = JSON.parse("<%= j raw @search_result %>");
+$('.forecast-table').html("<%= escape_javascript (render partial: 'forecast', locals: { items: @query }) %>");
+
+var search_result = JSON.parse("<%= j raw @query.to_json %>");
 console.log(search_result);
-
-// var t = new Date( search_result.list[0].dt );
-// var formatted = t.format("Do MMM");
-
-
-$(".location ").html(search_result.city.name);
-$(".num").html( function() {
-  return `
-    ${Math.ceil(search_result.list[0].main.temp)}
-    <sup>o</sup>
-     C
-  `;
-});

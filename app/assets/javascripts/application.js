@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
-//= require jquery.flexslider
-//= require moment
+//= require geocomplete
 //= require_tree .
 //= require_self
+
+$("#location-input").geocomplete({
+  details: ".find-location",
+  detailsAttribute: "data-geo"
+});

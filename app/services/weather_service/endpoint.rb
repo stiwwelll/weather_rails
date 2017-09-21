@@ -4,13 +4,13 @@ module WeatherService
     include HTTParty
     base_uri 'api.openweathermap.org/data'
 
-    def initialize(city)
+    def initialize(lat, lng)
       api_key = Rails.application.secrets.weather_key
-      @options = { query: { q: city, appid: api_key, units: "metric" } }
+      @options = { query: { lat: lat, lon: lng, appid: api_key, units: "metric", cnt: "5" } }
     end
 
-    def city_query
-      self.class.get('/2.5/forecast', @options)
+    def location_query
+      self.class.get('/2.5/forecast/daily', @options)
     end
   end
 

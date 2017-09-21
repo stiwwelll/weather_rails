@@ -5,8 +5,8 @@ class WeathersController < ApplicationController
   end
 
   def get_weather_data
-    @search_result = WeatherService::Endpoint.new(params[:city]).city_query
-    respond_to :js
+    search_result = WeatherService::Endpoint.new(params[:lat], params[:lng]).location_query
+    @query = JSON.parse(search_result.body)
+    respond_to :html, :js
   end
-
 end
