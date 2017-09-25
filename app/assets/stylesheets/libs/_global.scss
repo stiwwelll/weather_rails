@@ -13,7 +13,6 @@ body {
 	font-weight : 300;
 	line-height : 1.5;
 	background: $bg-color;
-
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -22,7 +21,7 @@ h1,h2,h3,h4,h5,h6{
 	line-height: normal;
 }
 
-hr{ 
+hr{
 	border: none;
 	border-bottom: 1px solid #777;
 }
@@ -32,7 +31,7 @@ ul, ol {
 	padding-left: 0;
 }
 
-a { 
+a {
 	text-decoration: none;
 	color: $accent-color;
 }

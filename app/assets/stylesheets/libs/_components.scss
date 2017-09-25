@@ -3,11 +3,18 @@
  */
 
 .button{
+	padding: 30px 70px;
+	margin-top: 3rem;
+	font-size: 28px;
 	border: none;
 	background: $accent-color;
-	padding: 10px 20px;
 	border-radius: 30px;
 	color: white;
+	@media (min-width: 992px) {
+		padding: 10px 20px;
+		font-size: 14px;
+		margin-top: 0;
+	}
 }
 
 .map{

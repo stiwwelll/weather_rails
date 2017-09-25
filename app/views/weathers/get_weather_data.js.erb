@@ -1,4 +1,1 @@
 $('.forecast-table').html("<%= escape_javascript (render partial: 'forecast', locals: { items: @query }) %>");
-
-var search_result = JSON.parse("<%= j raw @query.to_json %>");
-console.log(search_result);

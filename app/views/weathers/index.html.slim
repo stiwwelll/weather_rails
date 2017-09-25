@@ -1,24 +1,23 @@
 .site-content
-      .site-header
-        .container
-          a.branding href="index.html"
-            = image_tag("/assets/logo.png", class: 'logo')
-          .logo-type
-            h1.site-title Weather Inc.
-            small.site-description We ink the weather!
-      .hero data-bg-image="/assets/banner.jpg"
-        .container
-          = form_tag(weathers_get_weather_data_path, remote: true, method: 'post', class: "find-location")
-            = text_field_tag "input_field", nil, required: "true", placeholder: "Find your location...", id: "location-input"
-            = hidden_field_tag("lat", "", data:{ geo: "lat"})
-            = hidden_field_tag("lng", "", data:{ geo: "lng"})
-            = button_tag("Get Weather", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"})
-      .forecast-table
+  .site-header
+    .container
+      a.branding href="index.html"
+        = image_tag("/assets/logo.png", class: 'logo')
+      .logo-type
+        h1.site-title Weather Inc.
+  .hero
+    .container
+      = form_tag(weathers_get_weather_data_path, remote: true, method: 'post', class: "find-location")
+        = text_field_tag "input_field", nil, required: "true", placeholder: "Find your location...", id: "location-input"
+        = hidden_field_tag("lat", "", data:{ geo: "lat"})
+        = hidden_field_tag("lng", "", data:{ geo: "lng"})
+        = button_tag("Get Weather", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"})
+    .forecast-table
 
-      footer.site-footer
-        .container
-          p.colophon Copyright 2017 Marco Steffensky. Designed by Themezy. All rights reserved
-      /! .site-footer
+  footer.site-footer
+    .container
+      p.colophon Copyright 2017 Marco Steffensky. Designed by Themezy. All rights reserved
+  /! .site-footer
 = javascript_include_tag "http://maps.googleapis.com/maps/api/js?libraries=places"
 
 = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

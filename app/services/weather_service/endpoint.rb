@@ -6,7 +6,7 @@ module WeatherService
 
     def initialize(lat, lng)
       api_key = Rails.application.secrets.weather_key
-      @options = { query: { lat: lat, lon: lng, appid: api_key, units: "metric", cnt: "5" } }
+      @options = { query: { lat: lat, lon: lng, appid: api_key, units: "metric", cnt: "7" } }
     end
 
     def location_query

@@ -25,12 +25,6 @@ var coverVid=function(a,b,c){function d(a,b){var c=null;return function(){var d=
 /* Ariona Compass Starter Bootstrap */
 
 +function(){
-	/* Data background image generator */
-	var elBgImg = "[data-bg-image]";
-	$(elBgImg).each(function(){
-		var image = $(this).data("bg-image");
-		$(this).css("background-image", "url("+image+")");
-	});
 
 	/* Data background color generator */
 	var elBgClr = "[data-bg-color]";
@@ -86,4 +80,3 @@ var coverVid=function(a,b,c){function d(a,b){var c=null;return function(){var d=
 	})
 
 }(jQuery);
-
