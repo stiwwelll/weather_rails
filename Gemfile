@@ -28,6 +28,7 @@ gem 'httparty'
 gem 'slim', '~> 2.0'
 gem 'jquery-rails', '~> 4.1'
 gem 'geocomplete_rails'
+gem 'rails_12factor', group: :production
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
